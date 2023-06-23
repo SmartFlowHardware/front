@@ -3,7 +3,7 @@ import random
 from PyQt5.QtCore import * #QTimer
 from PyQt5.QtGui import * #QFont
 from PyQt5.QtWidgets import * #QApplication, QMainWindow, QLabel, QPushButton
-
+#luis esta version ya esta actulizada a lo mas nuevo, verifica
 
 class MainWindow(QMainWindow):
     def __init__(self):
