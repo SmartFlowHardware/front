@@ -10,3 +10,4 @@ while True:
     if ser.in_waiting > 0:
         datos_recibidos = ser.readline().decode().strip()
         print('Datos recibidos:', datos_recibidos)
+        ser.write(datos_recibidos)
