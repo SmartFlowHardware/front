@@ -1,5 +1,5 @@
 import serial
-
+from time import sleep
 # Configuración del puerto serial
 port = '/dev/ttymxc1'  # Reemplaza con el puerto serial correspondiente en tu sistema
 baudrate = 115200
@@ -11,10 +11,11 @@ try:
 
     try:
         while True:
+            sleep(1)
             # Intenta leer los datos del puerto serial
             try:
                 data = ser.readline().decode().strip()
-                
+                print("yes")
                 # Verifica si se recibieron datos
                 if data:
                     print(data)
