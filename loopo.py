@@ -1,10 +1,10 @@
 import serial
-import readline
 
 # Configuración del puerto serial
-port = '/dev/ttyUSB0'  # Reemplaza con el puerto serial correspondiente en tu sistema
-baudrate = 9600
-
+# port = '/dev/ttymxc1'  # Reemplaza con el puerto serial correspondiente en tu sistema
+# baudrate = 115200
+port = 'COM22'  # Reemplaza con el puerto serial correspondiente en tu sistema
+baudrate = 115200
 # Abre la conexión serial
 ser = serial.Serial(port, baudrate)
 
@@ -33,7 +33,7 @@ def receive_data():
     try:
         while True:
             # Lee los datos del puerto serial
-            data = ser.readline().decode().strip()
+            data = ser.readline().decode('latin-1').strip()
 
             # Muestra los datos en el terminal
             if data:
