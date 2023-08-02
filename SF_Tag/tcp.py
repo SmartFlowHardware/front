@@ -2,9 +2,12 @@ import socket
 import sys
 from Check_bt import mac_lamp,mac_vehc
 def connect():
+    ip=socket.gethostbyname(socket.gethostname())
+    while '127.0.0.1' in ip:
+        ip=socket.gethostbyname(socket.gethostname())
+
     # Create a TCP/IP socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
     # Connect the socket to the port where the server is listening
     server_address = ('10.90.120.10', 8010)
     print('connecting to {} port {}'.format(*server_address))
@@ -25,9 +28,13 @@ def connect():
             while amount_received < amount_expected:
                 data = sock.recv(50)
                 amount_received += len(data)
-                print('received {!r}'.format(data))
-
+                # print('received {!r}'.format(data))
+    except ConnectionRefusedError:
+        sock.connect(server_address)
     finally:
         print('closing socket')
         sock.close()
         
+
+# ip=socket.gethostbyname(socket.gethostname())
+# print(ip)        

@@ -32,5 +32,8 @@ def db_mac(data:str):
 
     return mac_info
 
+key=mac_info.keys()
 
-print(db_mac('mac1'))
+for kei in key:
+    print(kei)
+# print(mac_info.update(['']))
