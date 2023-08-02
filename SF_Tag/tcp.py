@@ -1,11 +1,12 @@
 import socket
 import sys
+import time
 from Check_bt import mac_lamp,mac_vehc
 def connect():
-    ip=socket.gethostbyname(socket.gethostname())
-    while '127.0.0.1' in ip:
-        ip=socket.gethostbyname(socket.gethostname())
-
+    # ip=socket.gethostbyname(socket.gethostname())
+    # while '127.0.0.1' in ip:
+    #     ip=socket.gethostbyname(socket.gethostname())
+    time.sleep(30)
     # Create a TCP/IP socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Connect the socket to the port where the server is listening
