@@ -1,10 +1,10 @@
 import serial
 import Check_bt
 
-# port = '/dev/ttymxc1'  # Reemplaza con el puerto serial correspondiente en tu sistema
-# baudrate = 230400
-port = 'COM25'  # Reemplaza con el puerto serial correspondiente en tu sistema
-baudrate = 115200
+port = '/dev/ttymxc1'  # Reemplaza con el puerto serial correspondiente en tu sistema
+baudrate = 230400
+#port = 'COM25'  # Reemplaza con el puerto serial correspondiente en tu sistema
+#baudrate = 115200
 # Abre la conexión serial
 ser = serial.Serial(port, baudrate)
 start_scan='set scanner on 0\n'
