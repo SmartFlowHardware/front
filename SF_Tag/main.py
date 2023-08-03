@@ -2,18 +2,20 @@ import uart1
 import time
 import Check_bt
 import tcp
+import os
 # from uart1 import init_uart
 
 def screen():
     while True:
 
+        os.system('echo 0 | tee /sys/class/leds/usr_led/brightness')
 
         # print(Check_bt.mac_vehc)
         # dict={}
         dict=Check_bt.mac_vehc|Check_bt.mac_lamp
         print(Check_bt.mac_lamp)
         print(Check_bt.mac_vehc)
-
+    
 
         print('Lamparas: ',len(Check_bt.mac_lamp))
         print('Vehiculo: ',len(Check_bt.mac_vehc))
